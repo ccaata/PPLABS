@@ -40,9 +40,7 @@ public class Calculator extends JFrame {
         }
         add(buttonPanel, BorderLayout.CENTER);
 
-        // Butonul C - curăță zona de text
         operators[7].addActionListener(e -> area.setText(""));
-        // Butonul = - calculează expresia
         operators[6].addActionListener(e -> area.setText(evaluateExpression(area.getText())));
 
         // Adaugă operatorii și parantezele în zona de text la apăsare
@@ -62,7 +60,7 @@ public class Calculator extends JFrame {
         }
     }
 
-    // Metoda tokenize: extrage numere (inclusiv zecimale), operatori și paranteze
+
     private String[] tokenize(String expression) {
         ArrayList<String> tokens = new ArrayList<>();
         StringBuilder number = new StringBuilder();
@@ -86,14 +84,13 @@ public class Calculator extends JFrame {
         return tokens.toArray(new String[0]);
     }
 
-    // Conversia expresiei infixate în notație postfixată
     private String convertToPostfix(String infix) {
         String[] tokens = tokenize(infix);
         StringBuilder output = new StringBuilder();
         Stack<String> stack = new Stack<>();
 
         for (String token : tokens) {
-            if (token.matches("\\d+(\\.\\d+)?")) { // număr întreg sau zecimal
+            if (token.matches("\\d+(\\.\\d+)?")) {
                 output.append(token).append(" ");
             } else if (token.equals("(")) {
                 stack.push(token);
@@ -104,7 +101,7 @@ public class Calculator extends JFrame {
                 if (!stack.isEmpty() && stack.peek().equals("(")) {
                     stack.pop();
                 }
-            } else { // operator
+            } else {
                 while (!stack.isEmpty() && precedence(stack.peek().charAt(0)) >= precedence(token.charAt(0))) {
                     output.append(stack.pop()).append(" ");
                 }
@@ -119,7 +116,7 @@ public class Calculator extends JFrame {
         return output.toString();
     }
 
-    // Evaluarea expresiei postfixate folosind tipul double
+
     private double evaluatePostfix(String postfix) {
         Stack<Double> stack = new Stack<>();
 
@@ -142,7 +139,7 @@ public class Calculator extends JFrame {
         return stack.pop();
     }
 
-    // Determină prioritatea operatorilor
+
     private int precedence(char operator) {
         return (operator == '+' || operator == '-') ? 1 :
                 (operator == '*' || operator == '/') ? 2 :
