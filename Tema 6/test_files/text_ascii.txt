@@ -1,0 +1,2 @@
+Acesta este un fi?ier text ASCII simplu.
+Contine doar caractere de tip text.

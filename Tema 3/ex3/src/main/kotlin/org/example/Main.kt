@@ -94,7 +94,7 @@ fun deserializeTree(str: String, isFile: Boolean): Node {
 fun main(args: Array<String>) {
     val path = "serialised.txt"
     if (!File(path).exists()) {
-        var node = Node("https://mike.tuiasi.ro/")
+        var node = Node("https://example.com/")
         node.populateChildren(0)
 
         serializeTree(node, path)

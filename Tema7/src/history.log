@@ -1,0 +1,41 @@
+Start-Date: 2024-01-01 10:00:00
+Commandline: apt install package1
+Requested-By: user1
+Install: package1
+End-Date: 2024-01-01 10:01:00
+
+Start-Date: 2024-01-02 11:00:00
+Commandline: apt remove package2
+Requested-By: user2
+Remove: package2
+End-Date: 2024-01-02 11:01:00
+
+Start-Date: 2024-01-03 12:00:00
+Commandline: apt upgrade package3
+Requested-By: user3
+Upgrade: package3
+End-Date: 2024-01-03 12:01:00
+
+Start-Date: 2024-01-04 13:00:00
+Commandline: apt install package4
+Requested-By: user4
+Install: package4
+End-Date: 2024-01-04 13:01:00
+
+Start-Date: 2024-01-05 14:00:00
+Commandline: apt remove package5
+Requested-By: user5
+Remove: package5
+End-Date: 2024-01-05 14:01:00
+
+Start-Date: 2024-01-06 15:00:00
+Commandline: apt install package6
+Requested-By: user6
+Install: package6
+End-Date: 2024-01-06 15:01:00
+
+Start-Date: 2024-01-07 16:00:00
+Commandline: apt upgrade package7
+Requested-By: user7
+Upgrade: package7
+End-Date: 2024-01-07 16:01:00
