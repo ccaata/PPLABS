@@ -40,7 +40,7 @@
         <dependency>
             <groupId>com.github.mfriedenhagen</groupId>
             <artifactId>khttp</artifactId>
-            <version>-SNAPSHOT</version>
+            <version>0.1.0</version>
         </dependency>
 
         <!-- Dependencies for Testing -->
@@ -97,24 +97,9 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.2.0</version> <!-- Use a recent version -->
+                <version>3.2.0</version>
                 <configuration>
-                    <!-- Explicitly use the 'java' executable -->
-                    <executable>java</executable>
-                    <arguments>
-                        <!-- JVM Option: Add the required '-add-opens' -->
-                        <argument>--add-opens=java.base/java.net=ALL-UNNAMED</argument>
-
-                        <!-- Classpath Setup -->
-                        <argument>-classpath</argument>
-                        <classpath /> <!-- Tells Maven to insert the project classpath -->
-
-                        <!-- Your Main Class -->
-                        <argument>org.example.kidsbrowser.MainKt</argument>
-
-                        <!-- Add any arguments FOR your MainKt here if needed -->
-                        <!-- <argument>arg1</argument> -->
-                    </arguments>
+                    <mainClass>org.example.kidsbrowser.MainKt</mainClass>
                 </configuration>
             </plugin>
         </plugins>

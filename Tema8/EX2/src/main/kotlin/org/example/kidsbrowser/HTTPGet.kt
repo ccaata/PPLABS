@@ -1,5 +1,5 @@
 import khttp.responses.Response
 
 interface HTTPGet {
-    fun getResponse(): Response
+    fun getResponse(): Response?
 }
